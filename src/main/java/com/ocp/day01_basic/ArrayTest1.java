@@ -12,5 +12,9 @@ public class ArrayTest1 {
         for(int i=0;i<scores.length;i++) {
             System.out.println(scores[i]);
         }
+        // 利用 for-each 印出列元素內容
+        for(int x : scores) {
+            System.out.println(x);
+        }
     }
 }
