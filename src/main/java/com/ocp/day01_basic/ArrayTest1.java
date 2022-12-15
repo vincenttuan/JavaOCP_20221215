@@ -8,5 +8,9 @@ public class ArrayTest1 {
         System.out.println(scores[1]);
         System.out.println(scores[2]);
         System.out.println(scores.length);
+        // 利用 for-loop 印出陣列元素內容
+        for(int i=0;i<scores.length;i++) {
+            System.out.println(scores[i]);
+        }
     }
 }
