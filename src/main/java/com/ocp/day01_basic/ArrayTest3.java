@@ -10,7 +10,7 @@ public class ArrayTest3 {
         double bAvg = getAvg(bClass);
         System.out.printf("A 班平均: %.1f\n", aAvg);
         System.out.printf("B 班平均: %.1f\n", bAvg);
-        System.out.println(aAvg > bAvg ? "A班平均高" : "B班平均高");
+        System.out.println(aAvg > bAvg ? "A 班平均高" : "B 班平均高");
     }
     // 計算總分的方法
     public static int getSum(int[] scores) {
