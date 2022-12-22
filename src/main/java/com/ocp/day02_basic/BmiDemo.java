@@ -8,9 +8,8 @@ public class BmiDemo {
         b1.name = "John";
         b1.weight = 60.0;
         b1.height = 170.0;
-        b1.bmi = b1.weight / Math.pow(b1.height/100, 2);
+        b1.calcBmi();
         b1.print();
-        
         
     }
     
