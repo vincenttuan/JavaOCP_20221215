@@ -15,7 +15,7 @@ public class EmployeeDemo3 {
             int salary = scanner.nextInt();
             // 動態加入 Employee 物件
             employees.add(new Employee(name, salary));
-            System.out.print("資料加入成功! 是否要繼續(y/n)?");
+            System.out.print("資料加入成功! 是否要繼續(y/n)? ");
             String check = scanner.next().intern(); // intern() 將字串放到 String pool 中, 就可以利用 == 來進行字串比較
             if(check == "n") {
                 break;
