@@ -14,4 +14,8 @@ public class Student {
         }
     }
     
+    void print() {
+        System.out.printf("%s, %d, %b\n", name, score, pass);
+    }
+    
 }
