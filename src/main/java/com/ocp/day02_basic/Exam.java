@@ -12,6 +12,9 @@ public class Exam {
     }
     
     void calcAvg() {
+        if(sum == 0) {
+            calcSum();
+        }
         avg = sum / 3.0;
     }
 
