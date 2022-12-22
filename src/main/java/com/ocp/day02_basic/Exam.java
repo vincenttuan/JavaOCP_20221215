@@ -14,5 +14,10 @@ public class Exam {
     void calcAvg() {
         avg = sum / 3.0;
     }
+
+    @Override
+    public String toString() {
+        return "Exam{" + "chinese=" + chinese + ", english=" + english + ", math=" + math + ", sum=" + sum + ", avg=" + avg + '}';
+    }
     
 }
