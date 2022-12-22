@@ -9,6 +9,11 @@ public class StudentDemo {
         s1.check();
         
         Student s2 = new Student();
+        s2.name = "Mary";
+        s2.score = 45;
+        s2.check();
+        
+        s1.print();
         s2.print();
         
         
