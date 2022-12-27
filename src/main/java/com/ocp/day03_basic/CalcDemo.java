@@ -9,5 +9,6 @@ public class CalcDemo {
         System.out.println(area);
         System.out.println(area2);
         System.out.println(bmiValue);
+        
     }
 }
