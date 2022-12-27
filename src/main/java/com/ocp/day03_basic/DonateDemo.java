@@ -12,7 +12,7 @@ public class DonateDemo {
         
         System.out.printf("%s 捐了 $%d\n", d1.name, d1.cash);
         System.out.printf("%s 捐了 $%d\n", d2.name, d2.cash);
-        System.out.printf("捐款總金額: $%d\n", Donate.total);
+        System.out.printf("捐款總金額: $%,d\n", Donate.total);
         
     }
 }
