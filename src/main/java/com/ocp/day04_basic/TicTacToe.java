@@ -11,13 +11,17 @@ public class TicTacToe {
         printTTT();
         while (true) {            
             userPlay();
-            checkWinner();
+            if(checkWinner()) {
+                break; // 有贏家所以跳出迴圈
+            }
             pcPlay();
-            checkWinner();
+            if(checkWinner()) {
+                break; // 有贏家所以跳出迴圈
+            }
         }
     }
     
-    public static void checkWinner() {
+    public static boolean checkWinner() {
         int[][] wins = {
             {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, 
             {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, 
@@ -25,13 +29,15 @@ public class TicTacToe {
         };
         for(int i=0;i<wins.length;i++) {
             int sum = ttt[wins[i][0]] + ttt[wins[i][1]] + ttt[wins[i][2]];
-            if(sum == 237) {
+            if(sum == 237) { // 'O' + 'O' + 'O' = 237 
                 System.out.println("User win!");
-                break;
-            } else if(sum == 264) {
+                return true; // 有贏家
+            } else if(sum == 264) { // 'X' + 'X' + 'X' = 264
                 System.out.println("PC win!");
+                return true; // 有贏家
             }
         }
+        return false; // 沒有贏家
     }
     
     public static void userPlay() {
