@@ -40,12 +40,10 @@ public class TicTacToe {
         }
         // 和局判斷
         int total = 0;
-        for(int i=0;i<wins.length;i++) {
-            for(int k=0;k<wins[i].length;k++) {
-                total += wins[i][k];
-            }
+        for(int i=0;i<ttt.length;i++) {
+            total += ttt[i];
         }
-        
+        System.out.println("total = " + total);
         if(total == (('O' * 5) + ('X' * 4))) {
             return true; // 和局
         } else {
