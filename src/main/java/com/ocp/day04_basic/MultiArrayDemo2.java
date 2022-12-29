@@ -21,7 +21,5 @@ public class MultiArrayDemo2 {
                 System.out.println(m[i][k]);
             }
         }
-        
-        
     }
 }
