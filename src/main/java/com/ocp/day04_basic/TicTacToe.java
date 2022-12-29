@@ -10,14 +10,17 @@ public class TicTacToe {
     public static void main(String[] args) {
         printTTT();
         while (true) {            
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("User 請選擇(0~8): ");
-            int index = scanner.nextInt();
-            ttt[index] = 'O';
-            printTTT();
+            userPlay();
             pcPlay();
-            printTTT();
         }
+    }
+    
+    public static void userPlay() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("User 請選擇(0~8): ");
+        int index = scanner.nextInt();
+        ttt[index] = 'O';
+        printTTT();
     }
     
     public static void pcPlay() {
@@ -30,6 +33,7 @@ public class TicTacToe {
                 break;
             }
         }
+        printTTT();
     }
     
     public static void printTTT() {
