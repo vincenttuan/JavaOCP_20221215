@@ -11,7 +11,26 @@ public class TicTacToe {
         printTTT();
         while (true) {            
             userPlay();
+            checkWinner();
             pcPlay();
+            checkWinner();
+        }
+    }
+    
+    public static void checkWinner() {
+        int[][] wins = {
+            {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, 
+            {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, 
+            {0, 4, 8}, {2, 4, 6}, 
+        };
+        for(int i=0;i<wins.length;i++) {
+            int sum = ttt[wins[i][0]] + ttt[wins[i][1]] + ttt[wins[i][2]];
+            if(sum == 237) {
+                System.out.println("User win!");
+                break;
+            } else if(sum == 264) {
+                System.out.println("PC win!");
+            }
         }
     }
     
