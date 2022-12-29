@@ -12,11 +12,11 @@ public class TicTacToe {
         while (true) {            
             userPlay();
             if(checkWinner()) {
-                break; // 有贏家所以跳出迴圈
+                break; // 有贏家或和局所以跳出迴圈
             }
             pcPlay();
             if(checkWinner()) {
-                break; // 有贏家所以跳出迴圈
+                break; // 有贏家或和局所以跳出迴圈
             }
         }
     }
@@ -27,17 +27,32 @@ public class TicTacToe {
             {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, 
             {0, 4, 8}, {2, 4, 6}, 
         };
+        // 贏家判斷
         for(int i=0;i<wins.length;i++) {
             int sum = ttt[wins[i][0]] + ttt[wins[i][1]] + ttt[wins[i][2]];
-            if(sum == 237) { // 'O' + 'O' + 'O' = 237 
+            if(sum == 'O'*3) { // 'O' + 'O' + 'O' = 237 
                 System.out.println("User win!");
                 return true; // 有贏家
-            } else if(sum == 264) { // 'X' + 'X' + 'X' = 264
+            } else if(sum == 'X'*3) { // 'X' + 'X' + 'X' = 264
                 System.out.println("PC win!");
                 return true; // 有贏家
             }
         }
-        return false; // 沒有贏家
+        // 和局判斷
+        int total = 0;
+        for(int i=0;i<wins.length;i++) {
+            for(int k=0;k<wins[i].length;k++) {
+                total += wins[i][k];
+            }
+        }
+        
+        if(total == ('O' * 5 + 'X' * 4)) {
+            return true; // 和局
+        } else {
+            return false; // 沒有贏家
+        }
+        
+        //return total == ('O' * 5 + 'X' * 4);
     }
     
     public static void userPlay() {
