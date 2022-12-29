@@ -1,5 +1,7 @@
 package com.ocp.day04_basic;
 
+import java.util.Arrays;
+
 public class MultiArrayDemo2 {
     public static void main(String[] args) {
         int[][] m = new int[2][3];
@@ -12,7 +14,7 @@ public class MultiArrayDemo2 {
         m[1][2] = 50;
         // 將資料逐筆印出
         for(int i=0;i<m.length;i++) {
-            System.out.println(m[i]);
+            System.out.println(Arrays.toString(m[i]));
         }
         
         
