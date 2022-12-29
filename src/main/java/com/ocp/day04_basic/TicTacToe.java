@@ -44,13 +44,13 @@ public class TicTacToe {
             total += ttt[i];
         }
         System.out.println("total = " + total);
-        if(total == (('O' * 5) + ('X' * 4))) {
-            return true; // 和局
-        } else {
-            return false; // 沒有贏家
+        switch (total) {
+            case (('O' * 5) + ('X' * 4)):
+            case (('O' * 4) + ('X' * 5)):
+                return true; // 和局
+            default:
+                return false; // 沒有贏家
         }
-        
-        //return total == ('O' * 5 + 'X' * 4);
     }
     
     public static void userPlay() {
