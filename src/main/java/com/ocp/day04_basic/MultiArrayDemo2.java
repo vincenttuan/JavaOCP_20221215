@@ -14,7 +14,12 @@ public class MultiArrayDemo2 {
         m[1][2] = 50;
         // 將資料逐筆印出
         for(int i=0;i<m.length;i++) {
+            // m[i] 是一個一維陣列
             System.out.println(Arrays.toString(m[i]));
+            // 將陣列元素資料逐筆印出
+            for(int k=0;k<m[i].length;k++) {
+                System.out.println(m[i][k]);
+            }
         }
         
         
