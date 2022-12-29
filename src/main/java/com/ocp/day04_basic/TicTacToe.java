@@ -46,7 +46,7 @@ public class TicTacToe {
             }
         }
         
-        if(total == ('O' * 5 + 'X' * 4)) {
+        if(total == (('O' * 5) + ('X' * 4))) {
             return true; // 和局
         } else {
             return false; // 沒有贏家
