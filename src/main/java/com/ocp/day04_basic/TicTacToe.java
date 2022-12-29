@@ -11,7 +11,7 @@ public class TicTacToe {
         printTTT();
         while (true) {            
             Scanner scanner = new Scanner(System.in);
-            System.out.print("請選擇(0~8): ");
+            System.out.print("User 請選擇(0~8): ");
             int index = scanner.nextInt();
             ttt[index] = 'O';
             printTTT();
@@ -25,6 +25,7 @@ public class TicTacToe {
         while (true) {            
             int index = random.nextInt(ttt.length); // 0~8
             if(ttt[index] == '-') {
+                System.out.println("PC 請選擇(0~8): " + index);
                 ttt[index] = 'X';
                 break;
             }
