@@ -8,13 +8,15 @@ public class TicTacToe {
     static char [] ttt = {'-', '-', '-', '-', '-', '-', '-', '-', '-'};
     
     public static void main(String[] args) {
+        printTTT();
         while (true) {            
-            printTTT();
             Scanner scanner = new Scanner(System.in);
             System.out.print("請選擇(0~8): ");
             int index = scanner.nextInt();
             ttt[index] = 'O';
+            printTTT();
             pcPlay();
+            printTTT();
         }
     }
     
