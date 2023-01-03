@@ -6,6 +6,16 @@ public class ReferenceBook {
     private int pages; // 頁數
     private Author author;  // 作者
 
+    public ReferenceBook() {
+    }
+
+    public ReferenceBook(String title, int price, int pages, Author author) {
+        this.title = title;
+        this.price = price;
+        this.pages = pages;
+        this.author = author;
+    }
+    
     public String getTitle() {
         return title;
     }
