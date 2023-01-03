@@ -3,7 +3,7 @@ package com.ocp.day05_oop;
 public class Author { // 作者
     private String name;
     private int age;
-
+    
     public String getName() {
         return name;
     }
