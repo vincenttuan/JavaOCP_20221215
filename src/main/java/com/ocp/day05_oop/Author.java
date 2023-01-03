@@ -4,6 +4,15 @@ public class Author { // 作者
     private String name;
     private int age;
     
+    public Author() {
+    
+    }
+    
+    public Author(String name, int age) {
+        this.name = name;
+        setAge(age);
+    }
+    
     public String getName() {
         return name;
     }
@@ -17,7 +26,7 @@ public class Author { // 作者
     }
 
     public void setAge(int age) {
-        if(age > 0 || age < 150) {
+        if(age > 0 && age < 150) {
             this.age = age;
         }
     }

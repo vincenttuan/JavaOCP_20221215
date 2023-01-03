@@ -8,5 +8,9 @@ public class AuthorDemo {
         System.out.println(author);
         System.out.println(author.getName());
         System.out.println(author.getAge());
+        //-------------------------------------
+        Author author2 = new Author("Mary", 40);
+        System.out.println(author2);
+        
     }
 }
