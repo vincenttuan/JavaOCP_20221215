@@ -8,6 +8,7 @@ public class BookDemo {
         b1.setPages(750);
         b1.authorName = "John";
         b1.setAuthorAge(35);
+        System.out.println("價格 $" + b1.getPrice());
         System.out.println(b1.toString());
     }
 }

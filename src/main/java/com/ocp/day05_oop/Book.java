@@ -14,6 +14,10 @@ public class Book {
         }
     }
     
+    public int getPrice() {
+        return this.price;
+    }
+    
     public void setPages(int pages) {
         if(pages > 1) {
             this.pages = pages;
