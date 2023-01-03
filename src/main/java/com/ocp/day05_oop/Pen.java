@@ -6,6 +6,14 @@ public class Pen {
     private String color = "blue";
     private int price = 15;
     
+    public String getColor() {
+        return color;
+    }
+    
+    public int getPrice() {
+        return price;
+    }
+    
     public void setPrice(int price) {
         if(price < 10) {
             this.price = 10;
