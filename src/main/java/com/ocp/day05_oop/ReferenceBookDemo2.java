@@ -17,7 +17,8 @@ public class ReferenceBookDemo2 {
         
         //ReferenceBook book4 = new ReferenceBook("Java", 550, 620, new Author("Mary", 40));
         //ReferenceBook book4 = new ReferenceBook("Java", 550, 620, book1.getAuthor());
-        ReferenceBook book4 = new ReferenceBook("Java", 550, 620, author);
+        //ReferenceBook book4 = new ReferenceBook("Java", 550, 620, author);
+        ReferenceBook book4 = new ReferenceBook("Java", 550, 620, book3.getAuthor());
         System.out.println(book4);
         
     }
