@@ -8,5 +8,6 @@ public class BookDemo {
         b1.pages = 1200;
         b1.authorName = "John";
         b1.authorAge = 35;
+        System.out.println(b1);
     }
 }
