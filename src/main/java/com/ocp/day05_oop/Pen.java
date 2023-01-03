@@ -6,6 +6,16 @@ public class Pen {
     private String color = "blue";
     private int price = 15;
     
+    public void setPrice(int price) {
+        if(price < 10) {
+            this.price = 10;
+        } else if(price > 20) {
+            this.price = 20;
+        } else { // 10 <= price <== 20 之間
+            this.price = price;
+        }
+    }
+    
     public void setColor(String color) {
         color = color.toLowerCase(); // 全部轉小寫
         /*
