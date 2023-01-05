@@ -14,6 +14,16 @@ public class PersonDemo3 {
         System.out.println(persons);
         // 呼叫每一個 person 物件的 toString() 方法
         System.out.println(Arrays.toString(persons));
+        // 依序印出每一筆紀錄 for-loop (Java 1.0)
+        for(int i=0;i<persons.length;i++) {
+            System.out.println(persons[i]);
+        }
+        // 依序印出每一筆紀錄 for-each (Java 5.0)
+        for(Person person : persons) {
+            System.out.println(person);
+        }
+        // 依序印出每一筆紀錄 Arrays.stream() (Java 8.0)
+        Arrays.stream(persons).forEach(person -> System.out.println(person));
         
     }
 }
