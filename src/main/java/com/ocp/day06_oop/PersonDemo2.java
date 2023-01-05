@@ -11,5 +11,8 @@ public class PersonDemo2 {
         Employee employee = new Employee("Mary", 25, 55000);
         System.out.println(employee);
         
+        Manager manager = new Manager("Jo", 45, 12_0000, 50_0000);
+        System.out.println(manager);
+        
     }
 }
