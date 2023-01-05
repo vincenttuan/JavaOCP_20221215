@@ -5,6 +5,8 @@ public class PersonDemo2 {
         Student student = new Student("John", 18, 90);
         System.out.println(student);
         
+        Teacher teacher = new Teacher("Bob", 30, "Java");
+        System.out.println(teacher);
         
     }
 }
