@@ -1,5 +1,7 @@
 package com.ocp.day06_oop;
 
+import java.util.Arrays;
+
 public class PersonDemo5 {
     public static void main(String[] args) {
         Student s1 = new Student("John", 18, 90);
@@ -10,10 +12,16 @@ public class PersonDemo5 {
         
         Student[] students = {s1, s2, s3, s4, s5};
         // 請用 傳統 Java 印出及格的學生名字(只要印出名字就好)
-        
+        for(Student student : students) {
+            if(student.getScore() >= 60) {
+                System.out.println(student.getName());
+            }
+        }
         
         // 請用 Java Stream 印出及格的學生名字(只要印出名字就好)
-        
+        Arrays.stream(students)
+              .filter(student -> student.getScore() >= 60)
+              .forEach(student -> System.out.println(student.getName()));
         
         
     }
