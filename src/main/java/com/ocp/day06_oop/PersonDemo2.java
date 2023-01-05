@@ -8,5 +8,8 @@ public class PersonDemo2 {
         Teacher teacher = new Teacher("Bob", 30, "Java");
         System.out.println(teacher);
         
+        Employee employee = new Employee("Mary", 25, 55000);
+        System.out.println(employee);
+        
     }
 }
