@@ -26,6 +26,4 @@ public class Teacher extends Person {
         return "Teacher{" + "subject=" + subject + "} " + super.toString();
     }
     
-    
-    
 }
