@@ -24,6 +24,7 @@ public class PersonDemo3 {
         }
         // 依序印出每一筆紀錄 Arrays.stream() (Java 8.0)
         Arrays.stream(persons).forEach(person -> System.out.println(person));
-        
+        // 依序印出每一筆紀錄 Arrays.stream() + :: 方法參考 (Java 8.0)
+        Arrays.stream(persons).forEach(System.out::println);
     }
 }
