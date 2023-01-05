@@ -11,9 +11,14 @@ public class PersonDemo {
         System.out.println(student.getAge());
         System.out.println(student.getScore());
         
-        //Teacher teacher = new Teacher();
+        Teacher teacher = new Teacher();
+        teacher.setName("Bob");
+        teacher.setAge(30);
+        teacher.setSubject("Java");
         
-        
+        System.out.println(teacher.getName());
+        System.out.println(teacher.getAge());
+        System.out.println(teacher.getSubject());
         
     }
 }
