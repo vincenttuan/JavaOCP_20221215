@@ -22,5 +22,10 @@ public class PersonDemo4 {
         Arrays.stream(persons)
               .filter(person -> person.getAge() >= 18)
               .forEach(System.out::println);
+        
+        // 印出未成年的學生: Java Stream 寫法
+        Arrays.stream(persons)
+              .filter(person -> person.getAge() < 18)
+              .forEach(System.out::println);
     }
 }
