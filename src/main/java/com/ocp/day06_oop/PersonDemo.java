@@ -29,5 +29,15 @@ public class PersonDemo {
         System.out.println(employee.getAge());
         System.out.println(employee.getSalary());
         
+        Manager manager = new Manager();
+        manager.setName("Jo");
+        manager.setAge(45);
+        manager.setSalary(12_0000);
+        manager.setBudget(50_0000);
+        
+        System.out.println(manager.getName());
+        System.out.println(manager.getAge());
+        System.out.println(manager.getSalary());
+        System.out.println(manager.getBudget());
     }
 }
