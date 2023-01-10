@@ -35,7 +35,8 @@ public class EmpAndMgrDemo7 {
         //---------------------------------
         int sum3 = Arrays.stream(employees)
                          .filter(emp -> !(emp instanceof Manager))
-                         .mapToInt(emp -> emp.getSalary())
+                         //.mapToInt(emp -> emp.getSalary())
+                         .mapToInt(Employee::getSalary)
                          .sum();
         System.out.println(sum3);
     }
