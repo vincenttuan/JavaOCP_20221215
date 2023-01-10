@@ -1,5 +1,7 @@
 package com.ocp.day07_oop;
 
+import java.util.Arrays;
+
 public class EmpAndMgrDemo7 {
     public static void main(String[] args) {
         Employee[] employees = {
@@ -30,5 +32,11 @@ public class EmpAndMgrDemo7 {
             }
         }
         System.out.println(sum2);
+        //---------------------------------
+        int sum3 = Arrays.stream(employees)
+                         .filter(emp -> !(emp instanceof Manager))
+                         .mapToInt(emp -> emp.getSalary())
+                         .sum();
+        System.out.println(sum3);
     }
 }
