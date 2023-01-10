@@ -1,6 +1,14 @@
 package com.ocp.day07_oop;
 
 public class Manager extends Employee {
+
+    public Manager() {
+    }
+
+    public Manager(int salary) {
+        super(salary);
+    }
+    
     @Override // 覆寫註解(檢查覆寫是否合法)
     public void job() {
         System.out.println("管理");
