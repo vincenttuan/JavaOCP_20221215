@@ -1,11 +1,6 @@
 package com.ocp.day09_oop;
 
-public class Chihuahua implements Dog {
-
-    @Override
-    public void eat() {
-        System.out.println("狗糧");
-    }
+public class Chihuahua extends ADog {
 
     @Override
     public void skill() {
