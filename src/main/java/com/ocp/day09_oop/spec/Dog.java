@@ -1,4 +1,4 @@
-package com.ocp.day09_oop;
+package com.ocp.day09_oop.spec;
 
 // 介面規格
 public interface Dog {

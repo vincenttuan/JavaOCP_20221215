@@ -1,4 +1,6 @@
-package com.ocp.day09_oop;
+package com.ocp.day09_oop.spec;
+
+import com.ocp.day09_oop.spec.Dog;
 
 public abstract class TDog implements Dog {
 

@@ -1,4 +1,6 @@
-package com.ocp.day09_oop;
+package com.ocp.day09_oop.virtual;
+
+import com.ocp.day09_oop.virtual.EDog;
 
 public class GPSDog extends EDog {
 
