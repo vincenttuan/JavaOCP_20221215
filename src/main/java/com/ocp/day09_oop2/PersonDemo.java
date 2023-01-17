@@ -4,9 +4,9 @@ public class PersonDemo {
     public static void main(String[] args) {
         Student s1 = new Student(90, "John", 18);
         Student s2 = new Student(80, "Mary", 17);
-        SchoolPerson[] schoolPersons = {s1, s2};
-        printSchoolPerson(schoolPersons);
-        printPerson(schoolPersons);
+        Student[] students = {s1, s2};
+        printSchoolPerson(students);
+        printPerson(students);
     }
     
     public static void printSchoolPerson(SchoolPerson[] schoolPersons) {
