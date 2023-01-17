@@ -1,9 +1,6 @@
 package com.ocp.day09_oop.spec;
 
 // 抽象類別
-
-import com.ocp.day09_oop.spec.Dog;
-
 public abstract class ADog implements Dog {
 
     @Override
