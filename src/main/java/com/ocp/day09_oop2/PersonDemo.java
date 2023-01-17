@@ -7,6 +7,22 @@ public class PersonDemo {
         Student[] students = {s1, s2};
         printSchoolPerson(students);
         printPerson(students);
+        
+        Teacher t1 = new Teacher(70000, "Jo", 35);
+        Teacher t2 = new Teacher(80000, "Bob", 46);
+        Employee e1 = new Employee(35000, "Alice", 22);
+        Employee e2 = new Employee(55000, "Candy", 28);
+        
+        BusinessPerson[] businessPersons = {t1, t2, e1, e2};
+        printBusinessPerson(businessPersons);
+        printPerson(businessPersons);
+    }
+    
+    public static void printBusinessPerson(BusinessPerson[] businessPersons) {
+        for(BusinessPerson p : businessPersons) {
+            System.out.printf("%s %d %d\n", 
+                    p.getName(), p.getSalary(), p.getAge());
+        }
     }
     
     public static void printSchoolPerson(SchoolPerson[] schoolPersons) {
