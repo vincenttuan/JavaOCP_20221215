@@ -8,6 +8,13 @@ public class TestEmployeeDao {
     @Test
     public void test1() {
         EmployeeDao dao = new EmployeeDaoImpl();
+        // 查詢所有員工
         System.out.println(dao.queryAll());
+        // 查詢 id=0 員工資料
+        System.out.println(dao.getById(0));
+        // 變更 id=0 員工的薪資 $80000
+        dao.updateSalaryById(0, 80000);
+        // 查詢 id=0 員工資料
+        System.out.println(dao.getById(0));
     }
 }
