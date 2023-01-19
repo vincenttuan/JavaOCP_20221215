@@ -10,7 +10,7 @@ public interface EmployeeDao {
     // 根據 id 查詢員工
     public Employee getById(int id);
     // 查詢所有員工
-    public ArrayList<Employee> employees();
+    public ArrayList<Employee> queryAll();
     // 根據員工 id 來修改薪資
     public void updateSalaryById(int id, Integer salary);
     // 根據員工 id 來刪除該名員工

@@ -16,6 +16,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
             emp1.setName("John");
             emp1.setBirth(format.parse("1990-01-01"));
             emp1.setSalary(70000);
+            employees.add(emp1);
         } catch (ParseException e) {
             System.out.println("生日資料錯誤");
         }
@@ -32,7 +33,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public ArrayList<Employee> employees() {
+    public ArrayList<Employee> queryAll() {
         return employees;
     }
 
