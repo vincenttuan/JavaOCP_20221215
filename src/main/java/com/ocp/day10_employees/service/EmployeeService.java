@@ -29,4 +29,14 @@ public class EmployeeService {
         
     }
     
+    public Employee getEmployeeById(int id) {
+        // id 是否合法(在有效範圍內) ?
+        if(id < 0) {
+            System.out.println("員工　id 不存在");
+            return null;
+        }
+        Employee employee = dao.getById(id);
+        return employee;
+    }
+    
 }
