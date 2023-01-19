@@ -6,7 +6,7 @@ import java.util.ArrayList;
 // 員工資料 CRUD 的規格
 public interface EmployeeDao {
     // 新增員工
-    public void add();
+    public void add(Employee employee);
     // 根據 id 查詢員工
     public Employee getById(int id);
     // 查詢所有員工
