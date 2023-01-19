@@ -56,4 +56,14 @@ public class EmployeeService {
         // 進入資料庫修改
         dao.updateSalaryById(id, salary);
     }
+    
+    public void removeEmployeeById(int id) {
+        // id 是否合法(在有效範圍內) ?
+        if(id < 0) {
+            System.out.println("員工　id 不存在");
+            return;
+        }
+        // 進行資料刪除作業
+        dao.deleteById(id);
+    }
 }
