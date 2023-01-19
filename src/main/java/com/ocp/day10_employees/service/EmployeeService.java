@@ -5,6 +5,7 @@ import com.ocp.day10_employees.dao.EmployeeDaoImpl;
 import com.ocp.day10_employees.entity.Employee;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class EmployeeService {
@@ -39,4 +40,20 @@ public class EmployeeService {
         return employee;
     }
     
+    public ArrayList<Employee> findAll() {
+        return dao.queryAll();
+    }
+    
+    public void modifyEmployeeSalary(int id, Integer salary) {
+        if(id < 0) {
+            System.out.println("員工　id 不存在");
+            return;
+        }
+        if(salary < 26400) {
+            System.out.println("員工薪資不得低於 $26,400");
+            return;
+        }
+        // 進入資料庫修改
+        dao.updateSalaryById(id, salary);
+    }
 }
