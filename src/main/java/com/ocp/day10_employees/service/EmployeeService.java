@@ -14,7 +14,7 @@ public class EmployeeService {
     public void addEmployee(String name, String birth, Integer salary) {
         try {
             // 將 birth 字串轉成 date 格式
-            SimpleDateFormat format = new SimpleDateFormat();
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
             Date birthday = format.parse(birth);
             // 建立 Employee 物件
             Employee employee = new Employee();

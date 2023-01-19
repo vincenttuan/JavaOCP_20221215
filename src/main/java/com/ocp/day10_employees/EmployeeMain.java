@@ -2,6 +2,7 @@ package com.ocp.day10_employees;
 
 import com.ocp.day10_employees.entity.Employee;
 import com.ocp.day10_employees.service.EmployeeService;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -58,11 +59,12 @@ public class EmployeeMain {
     }
     
     public static void printAllEmployees() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         ArrayList<Employee> employees = service.findAll();
         System.out.println("-----------------------------");
         for (Employee e : employees) {
-            System.out.printf("%s %s %d\n", 
-                    e.getName(), e.getBirth(), e.getSalary());
+            System.out.printf("%5s %10s %8d\n", 
+                    e.getName(), sdf.format(e.getBirth()), e.getSalary());
         }
         System.out.println("-----------------------------");
     }
