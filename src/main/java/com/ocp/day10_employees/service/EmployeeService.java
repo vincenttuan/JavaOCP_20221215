@@ -53,6 +53,12 @@ public class EmployeeService {
             System.out.println("員工薪資不得低於 $26,400");
             return;
         }
+        // 是否有該名員工 ?
+        if(getEmployeeById(id) == null) {
+            System.out.println("無此員工");
+            return;
+        }
+        
         // 進入資料庫修改
         dao.updateSalaryById(id, salary);
     }
@@ -61,6 +67,11 @@ public class EmployeeService {
         // id 是否合法(在有效範圍內) ?
         if(id < 0) {
             System.out.println("員工　id 不存在");
+            return;
+        }
+        // 是否有該名員工 ?
+        if(getEmployeeById(id) == null) {
+            System.out.println("無此員工");
             return;
         }
         // 進行資料刪除作業
