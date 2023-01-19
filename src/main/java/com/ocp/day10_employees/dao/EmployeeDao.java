@@ -3,8 +3,8 @@ package com.ocp.day10_employees.dao;
 import com.ocp.day10_employees.entity.Employee;
 import java.util.ArrayList;
 
+// 員工資料 CRUD 的規格
 public interface EmployeeDao {
-    // CRUD 的規格
     // 新增員工
     public void add();
     // 根據 id 查詢員工
