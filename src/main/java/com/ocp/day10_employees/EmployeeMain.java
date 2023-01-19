@@ -40,8 +40,10 @@ public class EmployeeMain {
                 printAllEmployees();
                 break;
             case 3: // 修改員工薪資
+                updateSalary();
                 break;
             case 4: // 刪除員工
+                deleteEmployee();
                 break;
             case 0: // Exit
                 play = false;
@@ -67,6 +69,21 @@ public class EmployeeMain {
                     e.getName(), sdf.format(e.getBirth()), e.getSalary());
         }
         System.out.println("-----------------------------");
+    }
+    
+    public static void updateSalary() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("請輸入: 員工id 新的薪資");
+        int id = scanner.nextInt();
+        Integer salary = scanner.nextInt();
+        service.modifyEmployeeSalary(id, salary);
+    }
+    
+    public static void deleteEmployee() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("請輸入: 員工id");
+        int id = scanner.nextInt();
+        service.removeEmployeeById(id);
     }
     
 }
