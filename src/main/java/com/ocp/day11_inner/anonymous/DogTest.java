@@ -19,5 +19,8 @@ public class DogTest {
         };
         dog2.eat();
         
+        Dog dog3 = () -> System.out.println("吃青菜");
+        dog3.eat();
+        
     }
 }
