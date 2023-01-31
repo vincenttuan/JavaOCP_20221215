@@ -3,7 +3,7 @@ package com.ocp.day11_inner.method;
 public class Bar {
     int a = 100; // 物件變數
     public void foo() {
-        int b = 200; // 區域變數
+        int b = 200; // 區域變數 (Java 7 時代, 要加上 final 才可以給方法內部類別使用)
         int c = 300; // 區域變數
         c = 301;
         // 方法內部類別
