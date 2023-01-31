@@ -10,6 +10,7 @@ public class CalcTest {
             }
         };
         System.out.println(calc.add(10, 20));
+        
         // 2. 利用 Lambda 語法 I
         Calc calc2 = (int x, int y) -> {
             return x + y;
