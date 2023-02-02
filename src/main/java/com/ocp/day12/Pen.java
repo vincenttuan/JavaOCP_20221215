@@ -13,7 +13,6 @@ public class Pen {
     }
     
     // 覆寫 equals()
-
     @Override
     public boolean equals(Object obj) {
         Pen pen2 = (Pen)obj;
