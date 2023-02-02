@@ -23,6 +23,14 @@ public class Pen {
         }
     }
     
+    // 覆寫 hashCode
+
+    @Override
+    public int hashCode() {
+        return 7 * 13 * price + color.hashCode();
+    }
+    
+    
     
     public String getColor() {
         return color;
