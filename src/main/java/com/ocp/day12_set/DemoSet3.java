@@ -16,5 +16,12 @@ public class DemoSet3 {
         for(Employee emp : employees) {
             System.out.printf("姓名: %s 薪資: $%,d\n", emp.getName(), emp.getSalary());
         }
+        // Java 8 stream
+        // 每一個集合在 Java 8 之後都預設支援 stream()
+        employees.forEach(emp -> System.out.printf("姓名: %s 薪資: $%,d\n", emp.getName(), emp.getSalary()));
+        
+        employees.stream()
+                 .forEach(emp -> System.out.printf("姓名: %s 薪資: $%,d\n", emp.getName(), emp.getSalary()));
+        
     }
 }
