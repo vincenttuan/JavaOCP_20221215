@@ -8,10 +8,12 @@ public class DemoSet3 {
         Employee emp1 = new Employee("John", 50000);
         Employee emp2 = new Employee("Mary", 65000);
         Employee emp3 = new Employee("Bobo", 80000);
+        Employee emp4 = new Employee("Bobo", 80000);
         Set<Employee> employees = new LinkedHashSet<>();
         employees.add(emp1);
         employees.add(emp2);
         employees.add(emp3);
+        employees.add(emp4);
         System.out.println(employees);
         for(Employee emp : employees) {
             System.out.printf("姓名: %s 薪資: $%,d\n", emp.getName(), emp.getSalary());
