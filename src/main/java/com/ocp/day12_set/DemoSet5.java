@@ -17,7 +17,14 @@ public class DemoSet5 {
         employees.add(emp4);
         employees.add(emp5);
         System.out.println(employees);
-        // 請問 Programmer 的總薪資 = ?
+        System.out.println("員工人數: " +  employees.size()); // size() 取得集合元素個數
+        // 1. 請問 Programmer 的總薪資 = ?
+        int sum = employees.stream()
+                           .filter(e -> e.getName().equals("Programmer"))
+                           .mapToInt(e -> e.getSalary())
+                           .sum();
+        System.out.printf("Programmer 的總薪資: %,d\n", sum);
+        // 2. 請問 Manager 的總薪資 = ?
         
     }
 }
