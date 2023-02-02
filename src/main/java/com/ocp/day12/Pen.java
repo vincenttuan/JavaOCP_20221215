@@ -2,16 +2,29 @@ package com.ocp.day12;
 
 public class Pen {
     private String color;
-    private int name;
+    private int price;
 
     public Pen() {
     }
 
-    public Pen(String color, int name) {
+    public Pen(String color, int price) {
         this.color = color;
-        this.name = name;
+        this.price = price;
     }
+    
+    // 覆寫 equals()
 
+    @Override
+    public boolean equals(Object obj) {
+        Pen pen2 = (Pen)obj;
+        if(color.equals(pen2.color) && price == pen2.price) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
     public String getColor() {
         return color;
     }
@@ -20,17 +33,17 @@ public class Pen {
         this.color = color;
     }
 
-    public int getName() {
-        return name;
+    public int getPrice() {
+        return price;
     }
 
-    public void setName(int name) {
-        this.name = name;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Pen{" + "color=" + color + ", name=" + name + '}';
+        return "Pen{" + "color=" + color + ", price=" + price + '}';
     }
     
     
