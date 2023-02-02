@@ -14,6 +14,16 @@ public class DemoSet4 {
         employees.add(emp3);
         System.out.println(employees);
         // 請計算總薪資 = ?
-        
+        // Java 7
+        int sum = 0;
+        for(Employee emp : employees) {
+            sum += emp.getSalary();
+        }
+        System.out.printf("總薪資: $%,d\n", sum);
+        // Java 8 stream
+        int sum2 = employees.stream()
+                            .mapToInt(e -> e.getSalary())
+                            .sum();
+        System.out.printf("總薪資: $%,d\n", sum2);
     }
 }
