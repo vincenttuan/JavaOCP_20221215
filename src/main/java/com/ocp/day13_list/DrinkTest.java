@@ -18,7 +18,23 @@ public class DrinkTest {
         orders.add(coffee);
         System.out.println(orders);
         System.out.println(orders.size());
-        // 此筆訂單多少錢?
         
+        // 此筆訂單多少錢?
+        int sum = 0;
+        for(Drink drink : orders) {
+            sum += drink.getPrice();
+        }
+        System.out.println(sum);
+        
+        // Java 8 Stream
+        int sum2 = orders.stream()
+                         .mapToInt(drink -> drink.getPrice())
+                         .sum();
+        System.out.println(sum2);
+        
+        int sum3 = orders.stream()
+                         .mapToInt(Drink::getPrice)
+                         .sum();
+        System.out.println(sum3);
     }
 }
