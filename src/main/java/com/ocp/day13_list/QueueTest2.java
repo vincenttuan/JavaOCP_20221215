@@ -15,17 +15,22 @@ public class QueueTest2 {
         names.offer("Bob");
         names.offer("Alen");
         names.offer("Helen");
-        
+        boolean ok = false;
         while (!names.isEmpty()) {            
             String name = names.poll();
             int guess = random.nextInt(9) + 1; // 1~9
-            boolean ok = (guess == ans);
+            ok = (guess == ans);
             System.out.printf("%s 猜 %d 是否答對: %b\n", name, guess, ok);
             if(ok) {
                 System.out.printf("答案是: %d 恭喜 %s 猜對了\n", ans, name);
                 break;
             }
         }
+        
+        if(!ok) {
+            System.out.println("無人答對");
+        }
+        
         System.out.println("Game over!");
         
     }
