@@ -26,9 +26,7 @@ public class LinkedListDemo {
             int index = iter.previousIndex();
             String name = iter.previous();
             System.out.printf("index: %d, name: %s\n", index, name);
-            
         }
-        
         
     }
 }
