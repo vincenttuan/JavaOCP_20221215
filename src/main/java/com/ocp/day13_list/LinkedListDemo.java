@@ -11,6 +11,7 @@ public class LinkedListDemo {
         list.add("John");  // 0
         list.add("Mary");  // 1
         list.add("Bob");   // 2
+        list.add("John");  // 3 (List 中允許資料重複)
         System.out.println(list);
         System.out.println(list.size());
         System.out.println(list.get(1));
