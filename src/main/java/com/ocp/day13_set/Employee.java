@@ -2,7 +2,7 @@ package com.ocp.day13_set;
 
 import java.util.Objects;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
     private int id;
     private String name;
     private int age;
@@ -87,6 +87,12 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee{" + "id=" + id + ", name=" + name + ", age=" + age + ", salary=" + salary + '}';
+    }
+
+    @Override
+    public int compareTo(Employee emp) {
+        int result = this.age - emp.age;
+        return result;
     }
     
     
