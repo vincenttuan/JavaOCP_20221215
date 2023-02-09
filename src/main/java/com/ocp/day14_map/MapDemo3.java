@@ -14,5 +14,7 @@ public class MapDemo3 {
         map.values() // Collection<Double>
            .forEach(r -> System.out.println(r*r*Math.PI));
        
+        // 請計算圓面積總和
+        
     }
 }
