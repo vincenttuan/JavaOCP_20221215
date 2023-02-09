@@ -11,7 +11,8 @@ public class MapDemo3 {
         map.put("半徑3", 7.5);
         System.out.println(map);
         // 請計算每一個半徑的圓面積
-        
-        
+        map.values() // Collection<Double>
+           .forEach(r -> System.out.println(r*r*Math.PI));
+       
     }
 }
