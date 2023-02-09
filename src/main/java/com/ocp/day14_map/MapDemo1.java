@@ -23,5 +23,11 @@ public class MapDemo1 {
         // 根據 key 取 value
         System.out.println(exams.get("英文"));
         System.out.println(exams.get("數學"));
+        // 改資料: 數學改 95
+        exams.replace("數學", 95);
+        System.out.println(exams);
+        // 刪除數學
+        exams.remove("數學");
+        System.out.println(exams);
     }
 }
