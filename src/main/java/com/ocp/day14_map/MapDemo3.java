@@ -15,6 +15,10 @@ public class MapDemo3 {
            .forEach(r -> System.out.println(r*r*Math.PI));
        
         // 請計算圓面積總和
-        
+        double sum = map.values()
+                        .stream()
+                        .mapToDouble(r -> r*r*Math.PI)
+                        .sum();
+        System.out.println(sum);
     }
 }
