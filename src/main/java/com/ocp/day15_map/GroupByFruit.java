@@ -2,6 +2,9 @@ package com.ocp.day15_map;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class GroupByFruit {
     public static void main(String[] args) {
@@ -17,5 +20,12 @@ public class GroupByFruit {
         );
         System.out.println(fruits);
         // 請計算出 19.99=[banana], 29.99=[orange, watermelon], 9.99=[papaya, apple]
+        Map<Double, Set<String>> result = fruits.stream().collect(
+                Collectors.groupingBy(
+                        fruit->fruit.getPrice(),
+                        Collectors.mapping(fruit -> fruit.getName(), Collectors.toSet())
+                )
+        );
+        System.out.println(result);
     }
 }
