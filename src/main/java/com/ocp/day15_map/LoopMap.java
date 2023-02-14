@@ -16,10 +16,15 @@ public class LoopMap {
         map.put("E", 50);
         map.put("F", 60);
         System.out.println(map);
-        // java 8 走訪 Map 集合資料
+        // java 8 走訪 Map 集合資料 I
         // Map 中每一個元素 Map.Entry<String, Integer>
         for(Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
         }
+        
+        // java 8 走訪 Map 集合資料 II (使用 lambda)
+        // (k, v) 指的就是 Entry.Key 與 Entry.Value
+        map.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));
+        
     }
 }
