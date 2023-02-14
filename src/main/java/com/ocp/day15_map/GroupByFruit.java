@@ -27,5 +27,13 @@ public class GroupByFruit {
                 )
         );
         System.out.println(result);
+        
+        Map<Double, Set<String>> result2 = fruits.stream().collect(
+                Collectors.groupingBy(
+                        Fruit::getPrice,
+                        Collectors.mapping(Fruit::getName, Collectors.toSet())
+                )
+        );
+        System.out.println(result2);
     }
 }
