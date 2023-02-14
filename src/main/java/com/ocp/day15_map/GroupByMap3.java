@@ -15,5 +15,11 @@ public class GroupByMap3 {
         );
         System.out.println(result);
         
+        Map<String, List<Integer>> result2 =  scores.stream().collect(
+                Collectors.groupingBy(
+                        score -> score >= 60 ? "及格" : "不及格", 
+                        Collectors.mapping(score->score, Collectors.toList()))
+        );
+        System.out.println(result2);
     }
 }
