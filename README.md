@@ -98,7 +98,7 @@ insert into employee(dep_id, emp_name, salary) values(1, 'Bob', 43000);
 insert into employee(dep_id, emp_name, salary) values(3, 'Helen', 82000);
 
 insert into employee_language(emp_id, lan_id) values(1, 1);
-insert into employee_language(emp_id, lan_id) values(1, 2;
+insert into employee_language(emp_id, lan_id) values(1, 2);
 insert into employee_language(emp_id, lan_id) values(2, 1);
 insert into employee_language(emp_id, lan_id) values(2, 3);
 insert into employee_language(emp_id, lan_id) values(3, 1);
