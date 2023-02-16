@@ -49,4 +49,38 @@ where name = 'Mary';
 -- 刪除紀錄
 delete from student where id = 4;
 
+-- 建立 department 資料表
+create table if not exists department(
+    id int not null auto_increment,
+    dep_name varchar(20) not null unique,
+    primary key(id)
+);
+
+-- 建立 language 資料表
+create table if not exists language(
+    id int not null auto_increment,
+    lan_name varchar(20) not null unique,
+    primary key(id)
+);
+
+-- 建立 employee 資料表
+create table if not exists employee(
+    id int not null auto_increment,
+    dep_id int not null,
+    emp_name varchar(20) not null,
+    salary int,
+    foreign key (dep_id) references department(id), -- 外鍵參考
+    primary key(id)
+);
+
+-- 建立 employee_language (多對多關聯用)資料表
+create table if not exists employee_language(
+    id int not null auto_increment,
+    emp_id int not null,
+    lan_id int not null,
+    foreign key (emp_id) references employee(id), -- 外鍵參考
+    foreign key (lan_id) references language(id), -- 外鍵參考
+    primary key(id)
+);
+
 </pre>
