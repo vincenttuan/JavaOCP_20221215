@@ -12,4 +12,10 @@ create table if not exists student(
     primary key(id)
 );
 
+-- 新增紀錄
+insert into student(name, score, birth) values('John', 100, '2000-1-3');
+insert into student(name, score, birth) values('Mary', 90, '2001-2-5');
+insert into student(name, score, birth) values('Jack', 80, '1999-4-8');
+
+
 </pre>
