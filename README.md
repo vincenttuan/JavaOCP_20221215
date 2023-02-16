@@ -112,4 +112,12 @@ select * from language;
 select * from employee;
 select * from employee_language;
 
+-- A部門有哪些員工 ?
+-- 先查 A部門的 id 為何?
+select id from department where dep_name = 'A部門';
+-- 查到 A部門的 id 為 1 之後將他套入到 sql where 條件中
+select emp_name from employee where dep_id = 1;
+-- 透過子查詢
+select emp_name from employee where dep_id = (select id from department where dep_name = 'A部門' limit 1);
+
 </pre>
