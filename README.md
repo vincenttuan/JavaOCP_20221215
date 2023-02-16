@@ -46,4 +46,7 @@ update student
 set score = 45
 where name = 'Mary';
 
+-- 刪除紀錄
+delete from student where id = 4;
+
 </pre>
