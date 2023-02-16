@@ -18,5 +18,11 @@ insert into student(name, score, birth) values('John', 100, '2000-1-3');
 insert into student(name, score, birth) values('Mary', 90, '2001-2-5');
 insert into student(name, score, birth) values('Jack', 80, '1999-4-8');
 
+-- 查詢紀錄
+select id, name, score, birth from student;
+select * from student;  -- 用*表示所有欄位
+select name from student;
+select name, score from student where score >= 90;
+select name, timestampdiff(year, birth, now()) as age from student;
 
 </pre>
