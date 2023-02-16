@@ -24,5 +24,13 @@ select * from student;  -- 用*表示所有欄位
 select name from student;
 select name, score from student where score >= 90;
 select name, timestampdiff(year, birth, now()) as age from student;
+select sum(score) as total, avg(score) as average from student;
+select s.id, s.`name`, s.score, s.birth  from student s;
+select count(*) as count, 
+       sum(score) as total, 
+       avg(score) as average, 
+       max(score) as highest, 
+       min(score) as lowest 
+from student;
 
 </pre>
