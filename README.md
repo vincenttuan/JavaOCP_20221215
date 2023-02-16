@@ -106,5 +106,10 @@ insert into employee_language(emp_id, lan_id) values(4, 1);
 insert into employee_language(emp_id, lan_id) values(4, 2);
 insert into employee_language(emp_id, lan_id) values(4, 3);
 
+-- 資料查詢
+select * from department;
+select * from language;
+select * from employee;
+select * from employee_language;
 
 </pre>
