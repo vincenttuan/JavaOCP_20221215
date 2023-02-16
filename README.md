@@ -83,4 +83,28 @@ create table if not exists employee_language(
     primary key(id)
 );
 
+-- 新增資料
+insert into department(dep_name) values('A部門');
+insert into department(dep_name) values('B部門');
+insert into department(dep_name) values('C部門');
+
+insert into language(lan_name) values('Java');
+insert into language(lan_name) values('Python');
+insert into language(lan_name) values('Spring');
+
+insert into employee(dep_id, emp_name, salary) values(1, 'John', 55000);
+insert into employee(dep_id, emp_name, salary) values(2, 'Mary', 72000);
+insert into employee(dep_id, emp_name, salary) values(1, 'Bob', 43000);
+insert into employee(dep_id, emp_name, salary) values(3, 'Helen', 82000);
+
+insert into employee_language(emp_id, lan_id) values(1, 1);
+insert into employee_language(emp_id, lan_id) values(1, 2;
+insert into employee_language(emp_id, lan_id) values(2, 1);
+insert into employee_language(emp_id, lan_id) values(2, 3);
+insert into employee_language(emp_id, lan_id) values(3, 1);
+insert into employee_language(emp_id, lan_id) values(4, 1);
+insert into employee_language(emp_id, lan_id) values(4, 2);
+insert into employee_language(emp_id, lan_id) values(4, 3);
+
+
 </pre>
