@@ -120,4 +120,12 @@ select emp_name from employee where dep_id = 1;
 -- 透過子查詢
 select emp_name from employee where dep_id = (select id from department where dep_name = 'A部門' limit 1);
 
+-- 會Python的有哪些員工 ?
+select id from language where lan_name = 'Python' limit 1;
+select emp_id from employee_language where lan_id = 2;
+select emp_name from employee where id in (1, 4);
+-- 利用子查詢
+select emp_name from employee 
+where id in (select emp_id from employee_language 
+             where lan_id = (select id from language where lan_name = 'Python' limit 1));
 </pre>
