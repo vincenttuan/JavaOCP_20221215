@@ -33,4 +33,8 @@ select count(*) as count,
        min(score) as lowest 
 from student;
 
+select s.id, s.`name`, s.score, s.birth 
+from student s
+order by s.score desc; -- asc(預設:小->大), desc(大->小)
+
 </pre>
