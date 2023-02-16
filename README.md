@@ -1,6 +1,7 @@
 # JavaOCP_20221215
 JavaOCP_20221215
 <pre>
+-- 資料庫連線參數
 jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei&characterEncoding=utf-8&useUnicode=true
 
 -- 建立資料表 student
