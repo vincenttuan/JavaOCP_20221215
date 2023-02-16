@@ -37,4 +37,13 @@ select s.id, s.`name`, s.score, s.birth
 from student s
 order by s.score desc; -- asc(預設:小->大), desc(大->小)
 
+-- 修改紀錄
+update student
+set score = 45
+where id = 2;
+
+update student
+set score = 45
+where name = 'Mary';
+
 </pre>
