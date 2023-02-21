@@ -27,6 +27,14 @@
             <version>8.0.32</version>
         </dependency> 
         
+        <!-- 動態產出測試資料 -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        
     </dependencies>
     
 </project>
