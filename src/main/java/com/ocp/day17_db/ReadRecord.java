@@ -8,7 +8,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Date;
 
-public class SelectTable {
+public class ReadRecord {
     // 抓取 student 資料表中的資訊
     public static void main(String[] args) throws Exception {
         // 1. 驅動程式建立(JDBC 4.0 此行可以不用寫)
