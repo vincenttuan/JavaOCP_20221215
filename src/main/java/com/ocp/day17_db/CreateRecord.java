@@ -1,8 +1,11 @@
 package com.ocp.day17_db;
 
+import com.github.javafaker.Faker;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.Random;
 
 public class CreateRecord {
     // 在 student 資料表中建立一筆紀錄
@@ -15,10 +18,12 @@ public class CreateRecord {
         // 1. 建立 sql 新增語句
         String sql = "insert into student(name, score, birth) values(?, ?, ?)";
         // 2. 建立 PreparedStatement
+        Faker faker = new Faker(); // 透過 faker 產出動態測試資料
         PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, "Bob");
-        pstmt.setInt(2, 75);
-        pstmt.setString(3, "2002-4-4");
+        Random random = new Random();
+        pstmt.setString(1, faker.name().firstName());
+        pstmt.setInt(2, random.nextInt(10) + 15);
+        pstmt.setDate(3, new Date(faker.date().birthday().getTime()));
         int rowcount = pstmt.executeUpdate(); // 執行更新
         System.out.printf("新增資料筆數: %d\n", rowcount);
         // 3. 關閉資源
