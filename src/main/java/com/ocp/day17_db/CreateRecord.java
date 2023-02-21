@@ -23,6 +23,9 @@ public class CreateRecord {
         Random random = new Random();
         pstmt.setString(1, faker.name().firstName());
         pstmt.setInt(2, random.nextInt(10) + 15);
+        // 因為 pstmt.setDate(int, java.sql.Date)
+        // faker.date().birthday() 會得到 java.util.Date
+        // 要透過 new java.sql.Date(faker.date().birthday().getTime()) 轉成 java.sql.Date 的格式
         pstmt.setDate(3, new Date(faker.date().birthday().getTime()));
         int rowcount = pstmt.executeUpdate(); // 執行更新
         System.out.printf("新增資料筆數: %d\n", rowcount);
