@@ -5,12 +5,14 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.util.Random;
 import java.util.Scanner;
 
 public class UpdateRecord {
     // 修改 id = ? 該資料
     public static void main(String[] args) throws Exception {
+        System.out.print("請輸入要修改的 id = ");
+        int id = new Scanner(System.in).nextInt();
+        //-----------------------------------------------
         Class.forName("com.mysql.cj.jdbc.Driver");
         String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei&characterEncoding=utf-8&useUnicode=true";
         String user = "root";
@@ -24,8 +26,6 @@ public class UpdateRecord {
         pstmt.setString(1, faker.name().firstName());
         pstmt.setInt(2, faker.number().numberBetween(0, 100));
         pstmt.setDate(3, new Date(faker.date().birthday(15, 25).getTime()));
-        System.out.print("請輸入要修改的 id = ");
-        int id = new Scanner(System.in).nextInt();
         pstmt.setInt(4, id);
         int rowcount = pstmt.executeUpdate();
         System.out.printf("修改資料筆數: %d\n", rowcount);
