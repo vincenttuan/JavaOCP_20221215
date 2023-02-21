@@ -1,8 +1,10 @@
 package com.ocp.day17_db;
 
+import com.sun.jdi.Field;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.Date;
 
@@ -29,13 +31,19 @@ public class SelectTable {
         ResultSet rs = stmt.executeQuery(sql);
         
         // 6. 透過 while 迴圈將資料依序取出
+        ResultSetMetaData md = rs.getMetaData();
+        for(int i=1;i<=md.getColumnCount();i++) {
+            System.out.printf("%10s ", md.getColumnName(i));
+        }
+        System.out.println("\n------------------------------------------------------------------------");
+        
         while (rs.next()) { // rs.next() 是否有資料列
             int id      = rs.getInt("id");
             String name = rs.getString("name");
             int score   = rs.getInt("score");
             Date birth  = rs.getDate("birth");
             
-            System.out.printf("%d %s %d %s\n", id, name, score, birth);
+            System.out.printf("%10d %10s %10d %10s\n", id, name, score, birth);
         }
         
         // 7. 依序關閉資源連線
