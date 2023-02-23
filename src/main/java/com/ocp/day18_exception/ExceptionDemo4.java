@@ -15,7 +15,7 @@ public class ExceptionDemo4 {
             Class.forName(className); // 會拋出 ClassNotFoundException
             // 建立連線
             String url = "jdbc:mysql://localhost:3306/demo?serverTimezone=Asia/Taipei&characterEncoding=utf-8&useUnicode=true";
-            String user = "root1";
+            String user = "root";
             String password = "12345678";
             conn = DriverManager.getConnection(url, user, password); // 會拋出 SQLException
             System.out.println("任務完成");
