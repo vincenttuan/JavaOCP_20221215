@@ -14,7 +14,7 @@ public class ExceptionDemo3 {
         if(checkNumeric) {
             int people = Integer.parseInt(data); // 將字串轉數字
             // 2. 判斷 people 是否 >= 0
-            if(people >= 0) {
+            if(people > 0) {
                 int average = orange / people;
                 System.out.printf("每人可以分得 %d 條\n", average);
             } else {
