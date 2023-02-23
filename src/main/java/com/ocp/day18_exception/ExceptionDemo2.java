@@ -1,5 +1,6 @@
 package com.ocp.day18_exception;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /*
@@ -11,9 +12,18 @@ public class ExceptionDemo2 {
         int banana = 10;
         System.out.printf("有香蕉 %d 個, 請輸入要分的人數: ", banana);
         Scanner scanner = new Scanner(System.in);
-        int people = scanner.nextInt();
-        int average = banana / people;
-        System.out.printf("每人可以分得 %d 條\n", average);
+        try {
+            int people = scanner.nextInt();
+            int average = banana / people;
+            System.out.printf("每人可以分得 %d 條\n", average);
+        } catch(InputMismatchException e1) {
+            System.out.println("請輸入數字");
+        } catch(ArithmeticException e2) {
+            System.out.println(e2);
+            System.out.println(e2.getMessage());
+            System.out.println("人數不可為 0");
+        }
         System.out.println("程式結束");
     }
 }
+
