@@ -4,6 +4,10 @@ public class ExceptionDemo2 {
     public static void main(String[] args) {
         boolean isPass = login("admin", "1234");
         System.out.printf("登入資訊: %b\n", isPass);
+        
+        boolean isPass2 = login("admin2", "2222");
+        System.out.printf("登入資訊: %b\n", isPass2);
+        
     }
     
     // 登入驗證
