@@ -7,7 +7,7 @@ public class JobA extends Thread {
         work();
     }
     
-    public void work() {
+    private void work() {
         String tName = Thread.currentThread().getName();
         // 跑 1000 次迴圈
         for(int i=1;i<=1000;i++) {
