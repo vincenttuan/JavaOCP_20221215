@@ -1,6 +1,11 @@
 package com.ocp.day20_thread;
 
-public class JobA {
+public class JobA extends Thread {
+
+    @Override
+    public void run() {
+        work();
+    }
     
     public void work() {
         String tName = Thread.currentThread().getName();
