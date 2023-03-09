@@ -3,6 +3,7 @@ package com.ocp.day21_runnable;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Date;
+import java.util.Map;
 import java.util.Scanner;
 import yahoofinance.Stock;
 import yahoofinance.YahooFinance;
@@ -14,6 +15,7 @@ public class JobDemo2 {
             2. 得到現在時間
             3. 得到我的外部 ip
             4. 取得今日台灣加權股價指數(^TWII)
+            5. 匯率日幣(JPY)對台幣(TWD)
             @FunctionalInterface
             public interface Runnable { 
                 public abstract void run();
@@ -54,8 +56,24 @@ public class JobDemo2 {
                 e.printStackTrace();
             }
         };
+        // 透過 Java 8 Lambda
+        Runnable r5 = () -> {
+            try {
+                String[] symbols = {"JPYTWD=X", "TWDJPY=X"};
+                Map<String, Stock> stocks = YahooFinance.get(symbols); // x: eXchange
+                System.out.println(stocks);
+                System.out.println(stocks.keySet());
+                BigDecimal price1 = stocks.get("JPYTWD=X").getQuote().getPrice(); // 指數/價格
+                BigDecimal price2 = stocks.get("TWDJPY=X").getQuote().getPrice(); // 指數/價格
+                System.out.printf("日幣(JPY)對台幣(TWD): %.2f\n", price1.doubleValue());
+                System.out.printf("台幣(TWD)對日幣(JPY): %.2f\n", price2.doubleValue());
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        };
         // 建立執行緒執行來指定工作
-        Thread t1 = new Thread(r4);
+        Thread t1 = new Thread(r5);
         t1.start();
     }
 }
