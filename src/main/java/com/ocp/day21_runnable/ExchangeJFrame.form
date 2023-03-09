@@ -27,15 +27,18 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Component id="priceLabel" alignment="1" max="32767" attributes="0"/>
+                  <Component id="timeLabel" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Component id="currencyCombo1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="exchangeButton" min="-2" pref="93" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="switchButton" max="32767" attributes="0"/>
+                          <Component id="exchangeButton" pref="93" max="32767" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="currencyCombo2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="priceLabel" alignment="1" max="32767" attributes="0"/>
-                  <Component id="timeLabel" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="43" max="32767" attributes="0"/>
           </Group>
@@ -50,9 +53,11 @@
                   <Component id="exchangeButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="currencyCombo2" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="switchButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
               <Component id="priceLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="timeLabel" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
@@ -136,6 +141,17 @@
         <Property name="horizontalAlignment" type="int" value="4"/>
         <Property name="text" type="java.lang.String" value="yyyy-mm-dd HH:mm:ss"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="switchButton">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="0" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="SWITCH"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="switchButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

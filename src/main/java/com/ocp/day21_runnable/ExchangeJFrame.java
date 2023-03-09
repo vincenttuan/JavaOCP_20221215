@@ -38,6 +38,7 @@ public class ExchangeJFrame extends javax.swing.JFrame {
         currencyCombo2 = new javax.swing.JComboBox<>();
         priceLabel = new javax.swing.JLabel();
         timeLabel = new javax.swing.JLabel();
+        switchButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("我的匯率");
@@ -68,6 +69,14 @@ public class ExchangeJFrame extends javax.swing.JFrame {
         timeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         timeLabel.setText("yyyy-mm-dd HH:mm:ss");
 
+        switchButton.setForeground(new java.awt.Color(153, 0, 255));
+        switchButton.setText("SWITCH");
+        switchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                switchButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -75,14 +84,16 @@ public class ExchangeJFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(priceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(currencyCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(exchangeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(switchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(exchangeButton, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(currencyCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(priceLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(timeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(currencyCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -93,9 +104,11 @@ public class ExchangeJFrame extends javax.swing.JFrame {
                     .addComponent(currencyCombo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(exchangeButton)
                     .addComponent(currencyCombo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(switchButton)
+                .addGap(38, 38, 38)
                 .addComponent(priceLabel)
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
                 .addComponent(timeLabel)
                 .addContainerGap(36, Short.MAX_VALUE))
         );
@@ -108,6 +121,14 @@ public class ExchangeJFrame extends javax.swing.JFrame {
         Thread t1 = new Thread(exchange);
         t1.start();
     }//GEN-LAST:event_exchangeButtonActionPerformed
+
+    private void switchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_switchButtonActionPerformed
+        int index1 = currencyCombo1.getSelectedIndex();
+        int index2 = currencyCombo2.getSelectedIndex();
+        currencyCombo1.setSelectedIndex(index2);
+        currencyCombo2.setSelectedIndex(index1);
+        
+    }//GEN-LAST:event_switchButtonActionPerformed
     
     // 自行撰寫
     class Exchange implements Runnable {
@@ -171,6 +192,7 @@ public class ExchangeJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> currencyCombo2;
     private javax.swing.JButton exchangeButton;
     private javax.swing.JLabel priceLabel;
+    private javax.swing.JButton switchButton;
     private javax.swing.JLabel timeLabel;
     // End of variables declaration//GEN-END:variables
 }
