@@ -1,8 +1,11 @@
 package com.ocp.day21_runnable;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.Date;
 import java.util.Scanner;
+import yahoofinance.Stock;
+import yahoofinance.YahooFinance;
 
 public class JobDemo2 {
     public static void main(String[] args) {
@@ -10,7 +13,7 @@ public class JobDemo2 {
             1. 得到幸運數字
             2. 得到現在時間
             3. 得到我的外部 ip
-        
+            4. 取得今日台灣加權股價指數(^TWII)
             @FunctionalInterface
             public interface Runnable { 
                 public abstract void run();
@@ -38,8 +41,21 @@ public class JobDemo2 {
                 e.printStackTrace();
             }
         };
+        // 透過 Java 8 Lambda
+        Runnable r4 = () -> {
+            try {
+                Stock stock = YahooFinance.get("^TWII");
+                BigDecimal price = stock.getQuote().getPrice(); // 指數/價格
+                BigDecimal change = stock.getQuote().getChange(); // 漲跌
+                BigDecimal changeInPercent = stock.getQuote().getChangeInPercent(); // 漲跌幅
+                System.out.printf("台灣加權股價指數: %,.2f  %.2f(%.2f %%)\n", 
+                        price.doubleValue(), change.doubleValue(), changeInPercent.doubleValue());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        };
         // 建立執行緒執行來指定工作
-        Thread t1 = new Thread(r3);
+        Thread t1 = new Thread(r4);
         t1.start();
     }
 }
