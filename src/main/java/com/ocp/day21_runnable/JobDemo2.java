@@ -29,12 +29,17 @@ public class JobDemo2 {
         // 透過 Java 8 Lambda
         Runnable r3 = () -> {
             try {
-                URL url = new URL("https://www.whatismyip.com.tw/");
-                String data = new Scanner(url.openStream()).useDelimiter("\\A").nextLine();
-                System.out.println(data);
+                URL url = new URL("http://www.j4.com.tw/james/remoip.php");
+                String data = new Scanner(url.openStream()).useDelimiter("\\A").next();
+                //System.out.println(data);
+                String ip = data.substring(data.indexOf(":")+1, data.indexOf("<br>")).trim();
+                System.out.println(ip);
             } catch (Exception e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         };
+        // 建立執行緒執行來指定工作
+        Thread t1 = new Thread(r3);
+        t1.start();
     }
 }
