@@ -104,8 +104,9 @@ public class ExchangeJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exchangeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exchangeButtonActionPerformed
-        
-        
+        Exchange exchange = new Exchange();
+        Thread t1 = new Thread(exchange);
+        t1.start();
     }//GEN-LAST:event_exchangeButtonActionPerformed
     
     // 自行撰寫
