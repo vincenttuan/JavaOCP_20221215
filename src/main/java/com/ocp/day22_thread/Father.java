@@ -12,6 +12,11 @@ public class Father extends Thread {
         // 建立 Worker 執行緒
         Worker worker = new Worker();
         worker.start();
+        try {
+            worker.join();
+        } catch(InterruptedException e) {
+            System.out.println(e);
+        }    
         
         System.out.println("爸爸開始洗澡");
         System.out.println("爸爸洗完澡了");
