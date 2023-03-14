@@ -13,10 +13,11 @@ public class MultiExchangeDemo {
         Map<String, Stock> map = task.get();
         map.entrySet().forEach(entry -> {
             double ex = entry.getValue().getQuote().getPrice().doubleValue();
-            System.out.printf("$%.1f TWD 可以兌換 %s $%.1f\n", 
+            System.out.printf("$%.1f TWD 可以兌換 %s $%.1f 匯率: %.4f\n", 
                     cash, 
                     entry.getKey().substring(3, 6), // TWDJPA=X 取index在 3~<6 的資料
-                    (cash * ex));
+                    (cash * ex),
+                    ex);
         });
     }
 }
