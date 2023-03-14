@@ -17,7 +17,7 @@ public class Account {
         // 判斷帳戶餘額是否足夠 ?
         if(balance >= amount) {
             // 進行提款
-            for(long x=0;x<Long.MAX_VALUE;x++); // 模擬提款所花費的時間
+            for(int x=0;x<Integer.MAX_VALUE;x++); // 模擬提款所花費的時間
             // 帳戶餘額扣除
             setBalance(balance - amount);
             // 提款成功
