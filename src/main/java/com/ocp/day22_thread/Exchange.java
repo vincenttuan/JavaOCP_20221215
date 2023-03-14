@@ -7,7 +7,7 @@ import yahoofinance.YahooFinance;
 public class Exchange implements Callable<Double>{
     private String symbol;
     public Exchange(String currency) {
-        this.symbol = currency + "TWD=X";
+        this.symbol = "TWD" + currency + "=X";
     }
     
     @Override
