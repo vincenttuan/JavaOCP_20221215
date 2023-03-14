@@ -11,7 +11,7 @@ public class Account {
         this.balance = balance;
     }
     
-    public void withdraw(int amount) { // 提款方法
+    public synchronized void withdraw(int amount) { // 提款方法
         String tName = Thread.currentThread().getName();
         System.out.printf("%s 進來提款 $%d, 帳戶餘額: $%d\n", tName, amount, balance);
         // 判斷帳戶餘額是否足夠 ?

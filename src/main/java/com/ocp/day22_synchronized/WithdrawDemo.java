@@ -11,12 +11,12 @@ public class WithdrawDemo {
         Withdraw withdraw3 = new Withdraw(account, 3000); // 提款 3000 的工作
         // 建立執行緒
         Thread t1 = new Thread(withdraw1, "甲");
-        //Thread t2 = new Thread(withdraw2, "乙");
-        //Thread t3 = new Thread(withdraw3, "丙");
+        Thread t2 = new Thread(withdraw2, "乙");
+        Thread t3 = new Thread(withdraw3, "丙");
         // 開始作業
         t1.start();
-        //t2.start();
-        //t3.start();
+        t2.start();
+        t3.start();
         
         
     }
