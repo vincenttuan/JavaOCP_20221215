@@ -13,7 +13,7 @@ public class Father extends Thread {
         Worker worker = new Worker();
         worker.start();
         try {
-            worker.join();
+            worker.join(3000);
         } catch(InterruptedException e) {
             System.out.println(e);
         }    
