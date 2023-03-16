@@ -12,10 +12,13 @@ public class FileReaderDemo {
         try {
             fr = new FileReader(file); // 開啟檔案, 準備讀取
             // 逐字讀取
-            System.out.println(fr.read());
-            System.out.println(fr.read());
-            System.out.println(fr.read());
-            System.out.println(fr.read());
+            while (true) {                
+                int word = fr.read();
+                if(word == -1) {
+                    break;
+                }
+                System.out.print((char)word);
+            }
             
         } catch (IOException ex) {
             System.out.println(ex);
