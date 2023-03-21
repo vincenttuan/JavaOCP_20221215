@@ -1,7 +1,6 @@
 package com.ocp.day24_io;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 
