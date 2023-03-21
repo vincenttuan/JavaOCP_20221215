@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 
 public class CopyAndSum2 {
     public static void main(String[] args) {
@@ -18,13 +19,13 @@ public class CopyAndSum2 {
             while ((line = br.readLine()) != null) { // 逐行讀取, 若讀到 null 表示已經讀完, 跳離迴圈                
                 // 透過 split(",") 來拆分字串
                 String[] values = line.split(",");
-                int sum = Arrays.stream(values).mapToInt(Integer::parseInt).sum();
+                IntSummaryStatistics statistics = Arrays.stream(values).mapToInt(Integer::parseInt).summaryStatistics();
                 // 準備待寫入的字串
-                String result = line + "," + sum;
+                String result = line + "," + statistics.getSum() + "," + statistics.getAverage();
                 // 將字串寫入到檔案中
                 fw.write(result + "\n");
-                System.out.println("Copy And Sum OK!");
             }
+            System.out.println("Copy And Sum OK!");
             
         } catch(Exception e) {
             e.printStackTrace();

@@ -26,8 +26,8 @@ public class CopyAndSum {
                 String result = line + "," + sum;
                 // 將字串寫入到檔案中
                 fw.write(result + "\n");
-                System.out.println("Copy And Sum OK!");
             }
+            System.out.println("Copy And Sum OK!");
             
         } catch(Exception e) {
             e.printStackTrace();
