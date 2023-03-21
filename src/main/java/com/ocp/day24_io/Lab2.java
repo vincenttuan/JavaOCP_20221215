@@ -15,14 +15,18 @@ public class Lab2 {
             int count = 0;
             String target = "美國";
             Pattern pattern = Pattern.compile(target);
-            
             String line = null;
+            
+            long begin = System.nanoTime();
             while ((line = br.readLine()) != null) {  
                 Matcher matcher = pattern.matcher(line);
                 while (matcher.find()) {                    
                     count++;
                 }
             }
+            long end = System.nanoTime();
+            System.out.printf("花費時間: %.3f 秒\n", (end - begin)/Math.pow(10, 9) );
+            
             System.out.println(count);
             
             
