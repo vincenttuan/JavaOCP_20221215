@@ -10,7 +10,7 @@ import java.util.IntSummaryStatistics;
 public class CopyAndSum2 {
     public static void main(String[] args) {
         File source = new File("src/main/java/com/ocp/day24_io/source/score2.txt"); // 資料來源
-        File dist = new File("src/main/java/com/ocp/day24_io/dest/score2.txt"); // 目的地
+        File dist = new File("src/main/java/com/ocp/day24_io/dest/score2.csv"); // 目的地
         
         try(BufferedReader br = new BufferedReader(new FileReader(source));
             FileWriter fw = new FileWriter(dist)){
