@@ -6,6 +6,7 @@ import java.nio.file.Files;
 
 public class ReadV30_TSE {
     public static void main(String[] args) throws Exception {
+        
         File file = new File("src/main/java/io_lab/T30V.TSE");
         byte[] bytes = Files.readAllBytes(file.toPath());
         System.out.println(bytes.length);
