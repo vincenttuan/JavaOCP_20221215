@@ -35,7 +35,7 @@ public class ReadV30_TSE_2 {
         
         //System.out.println(tseMap);
         long begin = System.nanoTime();
-        System.out.println(tseMap.get("2330"));
+        System.out.println(tseMap.get("2330").get("LDC-PRICE"));
         long end = System.nanoTime();
         double time = (end - begin) / Math.pow(10, 9);
         System.out.println("花費時間:" + new DecimalFormat("0.#########").format(time) + " 秒");
