@@ -35,6 +35,8 @@ public class FileEncodingDetector {
         // 偵測結果
         String encoding = detector.getDetectedCharset();
         System.out.println("偵測結果: " + encoding);
+        // 偵測重置
+        detector.reset();
     }
     
 }
