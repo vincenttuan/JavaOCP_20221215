@@ -3,20 +3,32 @@ package io_lab;
 import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.text.DecimalFormat;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ReadV30_OTC_2 {
+public class ReadV30 {
+    
     public static void main(String[] args) throws Exception {
+        Map<String, Map<String, String>> tseMap = getMap("T30V.TSE");
+        Map<String, Map<String, String>> otcMap = getMap("T30V.OTC");
         
-        File file = new File("src/main/java/io_lab/T30V.OTC");
+        Map<String, Map<String, String>> allMap = new TreeMap<>();
+        allMap.putAll(tseMap);
+        allMap.putAll(otcMap);
+        
+        System.out.println(allMap.get("2330"));
+        System.out.println(allMap.get("00687B"));
+        
+    }
+    
+    private static Map<String, Map<String, String>> getMap(String fileName) throws Exception {
+        File file = new File("src/main/java/io_lab/" + fileName);
         byte[] bytes = Files.readAllBytes(file.toPath());
         System.out.println(bytes.length);
         Charset charset = Charset.forName("BIG5");
         int blockSize = 100;
-        Map<String, Map<String, String>> otcMap = new TreeMap<>();
+        Map<String, Map<String, String>> myMap = new TreeMap<>();
         for(int i = 0, len = bytes.length/blockSize ; i < len; i++) {
             byte[] block = new byte[blockSize];
             System.arraycopy(bytes, i*blockSize, block, 0, blockSize);
@@ -44,17 +56,10 @@ public class ReadV30_OTC_2 {
             System.arraycopy(block, 50, stockName, 0, 16);
             map.put("STOCK-NAME", new String(stockName, charset).trim());
             
-            otcMap.put(map.get("STOCK-NO"), map);
+            myMap.put(map.get("STOCK-NO"), map);
         }
         
-        //System.out.println(tseMap);
-        long begin = System.nanoTime();
-        System.out.println(otcMap.get("00687B").get("STOCK-NAME"));
-        long end = System.nanoTime();
-        double time = (end - begin) / Math.pow(10, 9);
-        System.out.println("花費時間:" + new DecimalFormat("0.#########").format(time) + " 秒");
-        //System.out.println(tseMap.get("0050"));
-        
-        
+        return myMap;
     }
+    
 }
