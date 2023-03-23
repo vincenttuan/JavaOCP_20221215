@@ -10,16 +10,12 @@ public class ReadV30_TSE {
         byte[] bytes = Files.readAllBytes(file.toPath());
         System.out.println(bytes.length);
         Charset charset = Charset.forName("BIG5");
-        
-        byte[] block1 = new byte[100];
-        System.arraycopy(bytes, 0, block1, 0, 100);
-        System.out.println(new String(block1));
-        
-        byte[] block2 = new byte[100];
-        System.arraycopy(bytes, 100, block2, 0, 100);
-        System.out.println(new String(block2));
-        
-        
+        int blockSize = 100;
+        for(int i = 0, len = bytes.length/blockSize ; i < len; i++) {
+            byte[] block = new byte[blockSize];
+            System.arraycopy(bytes, i*blockSize, block, 0, blockSize);
+            System.out.println(new String(block, charset));
+        }
         
     }
 }
